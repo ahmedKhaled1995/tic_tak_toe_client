@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="multiplayerBodySP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MultiplayerController">
+   <children>
+      <BorderPane fx:id="multiplayerBodyBP" prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <AnchorPane fx:id="centerAP" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TreeTableView fx:id="playersTableTV" layoutX="30.0" layoutY="12.0" prefHeight="243.0" prefWidth="540.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0">
+                     <columns>
+                        <TreeTableColumn fx:id="onlineStatusCol" editable="false" prefWidth="29.0" />
+                        <TreeTableColumn fx:id="playerNameCol" editable="false" prefWidth="355.0" text="Player Name" />
+                        <TreeTableColumn fx:id="pointsCol" editable="false" prefWidth="195.0" text="Points" />
+                     </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <columnResizePolicy>
+                        <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TreeTableView>
+               </children>
+            </AnchorPane>
+         </center>
+         <bottom>
+            <HBox fx:id="bottomBarHBox" alignment="CENTER" prefHeight="72.0" prefWidth="580.0" spacing="55.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="backBtn" mnemonicParsing="false" onAction="#handleBackBtnAction" prefHeight="55.0" prefWidth="130.0" text="Back">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Region fx:id="bottomRegion" prefHeight="72.0" prefWidth="170.0" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="inviteBtn" layoutX="340.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleInviteBtnAction" prefHeight="55.0" prefWidth="130.0" text="Invite">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets right="8.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </bottom>
+         <top>
+            <HBox fx:id="TopBarHBox" prefHeight="37.0" prefWidth="580.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="avatar" fitHeight="60.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/user.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="username" prefHeight="41.0" prefWidth="106.0" text="Username" />
+                  <Region fx:id="topRegion1" prefHeight="200.0" prefWidth="68.0" />
+                  <ImageView fx:id="pointsImage" fitHeight="42.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/scorepoints.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <TextField fx:id="pointsField" editable="false" prefHeight="31.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </TextField>
+                  <Region fx:id="topRegion2" prefHeight="61.0" prefWidth="122.0" />
+                  <ImageView fx:id="configImg" fitHeight="56.0" fitWidth="55.0" onMouseClicked="#handleConfigImgMouseClicked" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/settings4.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Button fx:id="configBtn" mnemonicParsing="false" onAction="#handleConfigBtnAction">
+                     <graphic>
+                        <ImageView fx:id="configMovingImg" fitHeight="56.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/movingsettings.gif" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </children>
+</StackPane>

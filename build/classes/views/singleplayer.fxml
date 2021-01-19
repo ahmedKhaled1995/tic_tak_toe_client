@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane fx:id="singleplayerBodyBP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SingleplayerController">
+   <center>
+      <AnchorPane fx:id="centerAP" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="easyBtn" alignment="CENTER" layoutX="200.0" mnemonicParsing="false" onAction="#handleEasyBtnAction" prefHeight="67.0" prefWidth="190.0" text="Easy" AnchorPane.leftAnchor="205.0" AnchorPane.rightAnchor="205.0" AnchorPane.topAnchor="8.0">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="mediumBtn" layoutX="205.0" layoutY="90.0" mnemonicParsing="false" onAction="#handleMediumBtnAction" prefHeight="67.0" prefWidth="190.0" text="Medium" AnchorPane.rightAnchor="205.0" AnchorPane.topAnchor="90.0">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="hardBtn" layoutX="205.0" layoutY="179.0" mnemonicParsing="false" onAction="#handleHardBtnAction" prefHeight="67.0" prefWidth="190.0" text="Hard" AnchorPane.bottomAnchor="89.0" AnchorPane.rightAnchor="205.0">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="backBtn" layoutX="205.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleBackBtnAction" prefHeight="67.0" prefWidth="190.0" text="Back" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="205.0">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <HBox fx:id="TopBarHBox" prefHeight="37.0" prefWidth="580.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="avatar" fitHeight="60.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/user.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="username" prefHeight="41.0" prefWidth="106.0" text="Username" />
+            <Region fx:id="topRegion1" prefHeight="200.0" prefWidth="68.0" />
+            <ImageView fx:id="pointsImage" fitHeight="42.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/scorepoints.png" />
+               </image>
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </ImageView>
+            <TextField fx:id="pointsField" editable="false" prefHeight="31.0" prefWidth="87.0">
+               <HBox.margin>
+                  <Insets top="8.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TextField>
+            <Region fx:id="topRegion2" prefHeight="61.0" prefWidth="122.0" />
+            <ImageView fx:id="configImg" fitHeight="56.0" fitWidth="55.0" onMouseClicked="#handleConfigImgMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/settings4.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Button fx:id="configBtn" mnemonicParsing="false" onAction="#handleConfigBtnAction">
+               <graphic>
+                  <ImageView fx:id="configMovingImg" fitHeight="56.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/movingsettings.gif" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
